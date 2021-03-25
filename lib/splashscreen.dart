@@ -6,58 +6,71 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Padding(
-              padding: const EdgeInsets.fromLTRB(30, 0, 20, 10),
-              child: Text(
-                'One Campus',
-                style: GoogleFonts.laBelleAurore(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 70),
-              )),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            width: double.infinity,
-            child: ElevatedButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 120, horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 20, 15),
+                child: Text(
+                  'One Campus',
+                  style: GoogleFonts.laBelleAurore(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 62),
                 )),
-                backgroundColor: MaterialStateProperty.all(Colors.white),
-                padding: MaterialStateProperty.all(EdgeInsets.all(15)),
-              ),
-              onPressed: () {},
-              child: Text(
-                'Admin',
-                style: TextStyle(color: Colors.black),
-              ),
+            SizedBox(
+              height: 10,
             ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            width: double.infinity,
-            child: ElevatedButton(
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              width: double.infinity,
+              child: ElevatedButton(
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   )),
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                  padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+                  backgroundColor: MaterialStateProperty.all(Color(0xCCcdd6f2)),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(20)),
                 ),
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 child: Text(
-                  'Student',
-                  style: TextStyle(color: Colors.black),
-                )),
-          ),
-        ],
+                  'Admin',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              width: double.infinity,
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    )),
+                    backgroundColor:
+                        MaterialStateProperty.all(Color(0xCCcdd6f2)),
+                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  child: Text(
+                    'Student',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  )),
+            ),
+          ],
+        ),
       ),
     );
   }
