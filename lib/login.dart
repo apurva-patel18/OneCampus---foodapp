@@ -1,133 +1,183 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class login extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
 }
 
-Widget buildEmail() {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Text(
-        'Email',
-        style: TextStyle(
-            fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-      ),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black45, blurRadius: 6, offset: Offset(0, 2))
-            ]),
-        height: 60,
-        child: TextField(
-            keyboardType: TextInputType.emailAddress,
-            style: TextStyle(
-              color: Colors.black45,
-            ),
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14),
-                prefixIcon: Icon(
-                  Icons.email,
-                  color: Color(0xff5961F9),
-                ),
-                hintText: 'Email',
-                hintStyle: TextStyle(color: Colors.black38))),
-      ),
-    ],
-  );
-}
-
-Widget buildPassword() {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Text(
-        'Password',
-        style: TextStyle(
-            fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-      ),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black45, blurRadius: 6, offset: Offset(0, 2))
-            ]),
-        height: 60,
-        child: TextField(
-            obscureText: true,
-            style: TextStyle(
-              color: Colors.black45,
-            ),
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14),
-                prefixIcon: Icon(
-                  Icons.lock,
-                  color: Color(0xff5961F9),
-                ),
-                hintText: 'Password',
-                hintStyle: TextStyle(color: Colors.black38))),
-      ),
-    ],
-  );
-}
-
-Widget buildForgotPassword() {
-  return Container(
-    alignment: Alignment.centerLeft,
-    child: TextButton(
-      child: Text(
-        'Forgot Password?',
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      onPressed: () {
-        print('Forgot button pressed');
-      },
-    ),
-  );
-}
-
-Widget buildLoginbtn() {
-  return Container(
-      padding: EdgeInsets.symmetric(vertical: 25),
-      width: double.infinity,
-      child: ElevatedButton(
-        onPressed: () => print('login pressed'),
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              )),
-          backgroundColor: MaterialStateProperty.all(Colors.white),
-          padding: MaterialStateProperty.all(EdgeInsets.all(15)),
-        ),
-        child: Text(
-          'Login',
-          style: TextStyle(
-              color: Color(0xff5961F9),
-              fontSize: 18,
-              fontWeight: FontWeight.bold),
-        ),
-      ));
-}
 
 class _loginState extends State<login> {
+  final _auth= FirebaseAuth.instance;
+  String email;
+  String password;
+
+  Widget buildEmail() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Email',
+          style: TextStyle(
+              fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        SizedBox(height: 10),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black45, blurRadius: 6, offset: Offset(0, 2))
+              ]),
+          height: 60,
+          child: TextFormField(
+              onChanged: (value){
+                setState(() {
+                  email = value;
+                });
+              },
+              keyboardType: TextInputType.emailAddress,
+              style: TextStyle(
+                color: Colors.black45,
+              ),
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(top: 14),
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Color(0xff5961F9),
+                  ),
+                  hintText: 'Email',
+                  hintStyle: TextStyle(color: Colors.black38))),
+        ),
+      ],
+    );
+  }
+
+  Widget buildPassword() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Password',
+          style: TextStyle(
+              fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        SizedBox(height: 10),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black45, blurRadius: 6, offset: Offset(0, 2))
+              ]),
+          height: 60,
+          child: TextField(
+              onChanged: (value){
+                setState(() {
+                  password = value;
+                });
+              },
+              obscureText: true,
+              style: TextStyle(
+                color: Colors.black45,
+              ),
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(top: 14),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Color(0xff5961F9),
+                  ),
+                  hintText: 'Password',
+                  hintStyle: TextStyle(color: Colors.black38))),
+        ),
+      ],
+    );
+  }
+
+  Widget buildForgotPassword() {
+    return Container(
+      alignment: Alignment.centerLeft,
+      child: TextButton(
+        child: Text(
+          'Forgot Password?',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onPressed: () {
+        },
+      ),
+    );
+  }
+
+  Widget buildLoginbtn() {
+    return Container(
+        padding: EdgeInsets.symmetric(vertical: 25),
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            FirebaseAuth.instance.signInWithEmailAndPassword(
+                email: email,
+                password: password)
+                .then((value){
+              Navigator.pushNamed(context, '/homepage');
+            }) .catchError((e){
+              print(e);
+            });
+          },
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                )),
+            backgroundColor: MaterialStateProperty.all(Colors.white),
+            padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+          ),
+          child: Text(
+            'Login',
+            style: TextStyle(
+                color: Color(0xff5961F9),
+                fontSize: 18,
+                fontWeight: FontWeight.bold),
+          ),
+        ));
+  }
+
+  Widget buildSignupbtn() {
+    return Container(
+        padding: EdgeInsets.symmetric(vertical: 25),
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/signup');
+          },
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                )),
+            backgroundColor: MaterialStateProperty.all(Colors.white),
+            padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+          ),
+          child: Text(
+            'Sign Up',
+            style: TextStyle(
+                color: Color(0xff5961F9),
+                fontSize: 18,
+                fontWeight: FontWeight.bold),
+          ),
+        ));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -164,6 +214,7 @@ class _loginState extends State<login> {
                         buildPassword(),
                         buildForgotPassword(),
                         buildLoginbtn(),
+                        buildSignupbtn(),
                       ],
                     ),
                   ),

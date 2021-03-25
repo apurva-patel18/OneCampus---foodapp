@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'login.dart';
 import 'signup.dart';
 import 'homepage.dart';
+import 'splashscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
