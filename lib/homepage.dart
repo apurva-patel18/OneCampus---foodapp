@@ -11,7 +11,7 @@ class _homePageState extends State<homePage> {
     return Column(
       children: <Widget>[
         Container(
-            padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
@@ -35,7 +35,7 @@ class _homePageState extends State<homePage> {
             )
         ),
         Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
+            padding: EdgeInsets.symmetric(vertical: 10),
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
@@ -59,7 +59,7 @@ class _homePageState extends State<homePage> {
             )
         ),
         Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
+            padding: EdgeInsets.symmetric(vertical: 10),
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
@@ -82,7 +82,79 @@ class _homePageState extends State<homePage> {
               ),
             )
         ),
-      ],
+        Container(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                print('button pressed');
+              },
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    )),
+                backgroundColor: MaterialStateProperty.all(Color(0xffE5EFFF)),
+                padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+              ),
+              child: Text(
+                'Nescafe',
+                style: TextStyle(
+                    color: Color(0xff5961F9),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            )
+        ),
+        Container(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                print('button pressed');
+              },
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    )),
+                backgroundColor: MaterialStateProperty.all(Color(0xffE5EFFF)),
+                padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+              ),
+              child: Text(
+                'Sweet Spot',
+                style: TextStyle(
+                    color: Color(0xff5961F9),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            )
+        ),
+        Container(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                print('button pressed');
+              },
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    )),
+                backgroundColor: MaterialStateProperty.all(Color(0xffE5EFFF)),
+                padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+              ),
+              child: Text(
+                'From the Streets',
+                style: TextStyle(
+                    color: Color(0xffFF4343),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            )
+        ),
+        ],
     );
   }
 
