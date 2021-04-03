@@ -15,7 +15,7 @@ class _homePageState extends State<homePage> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                print('button pressed');
+                Navigator.pushNamed(context, '/menu');
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -39,7 +39,7 @@ class _homePageState extends State<homePage> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                print('button pressed');
+                Navigator.pushNamed(context, '/menu2');
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -50,7 +50,7 @@ class _homePageState extends State<homePage> {
                 padding: MaterialStateProperty.all(EdgeInsets.all(15)),
               ),
               child: Text(
-                'Danis Cafe',
+                'Dannys Cafe',
                 style: TextStyle(
                     color: Color(0xff5961F9),
                     fontSize: 18,
@@ -172,21 +172,23 @@ class _homePageState extends State<homePage> {
               top: 65,
               bottom: 100,
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  "Cafes",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 48,
+            child: Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Cafes",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 48,
+                    ),
                   ),
-                ),
-                SizedBox(height: 20),
-                buildCafeNames(),
-              ],
+                  SizedBox(height: 20),
+                  buildCafeNames(),
+                ],
+              ),
             ),
           ),
         ),
