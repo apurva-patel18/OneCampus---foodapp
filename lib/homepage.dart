@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_campus/menus/menu.dart';
 
 class homePage extends StatefulWidget {
   @override
@@ -63,7 +64,7 @@ class _homePageState extends State<homePage> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                print('button pressed');
+                Navigator.pushNamed(context, '/menu3');
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -87,7 +88,7 @@ class _homePageState extends State<homePage> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                print('button pressed');
+                Navigator.pushNamed(context, '/menu4');
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -111,7 +112,7 @@ class _homePageState extends State<homePage> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                print('button pressed');
+                Navigator.pushNamed(context, '/menu5');
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(

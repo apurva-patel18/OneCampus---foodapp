@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:one_campus/menus/menu2.dart';
+import 'package:one_campus/menus/menu3.dart';
+import 'package:one_campus/menus/menu4.dart';
+import 'package:one_campus/menus/menu5.dart';
 import 'login.dart';
 import 'signup.dart';
 import 'homepage.dart';
@@ -18,13 +21,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: homePage(),
+      home: SplashScreen(),
       routes: {
         '/login': (_) => login(),
         '/signup': (_) => signUp(),
         '/homepage': (_) => homePage(),
         '/menu':(_) => Menuitems(),
         '/menu2':(_) => Menuitems2(),
+        '/menu3':(_) => Menuitem3(),
+        '/menu4':(_) => Menuitem4(),
+        '/menu5':(_) => Menuitem5(),
+
       },
     );
   }

@@ -66,7 +66,7 @@ Widget buildMenu() {
               'Italian Pizza',
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Color(0xff5961F9),
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -96,7 +96,7 @@ Widget buildMenu() {
               'Maggi',
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Color(0xff5961F9),
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -126,7 +126,7 @@ Widget buildMenu() {
               'Cheese Maggi',
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Color(0xff5961F9),
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -156,7 +156,7 @@ Widget buildMenu() {
               'Mexican Pizza',
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Color(0xff5961F9),
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -186,7 +186,7 @@ Widget buildMenu() {
               'Cheese Toastie',
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Color(0xff5961F9),
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -216,7 +216,7 @@ Widget buildMenu() {
               'Mayo Puff',
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Color(0xff5961F9),
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -246,7 +246,7 @@ Widget buildMenu() {
               'Schezwan Puff',
               style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Color(0xff5961F9),
                   fontWeight: FontWeight.bold),
             ),
           ),
