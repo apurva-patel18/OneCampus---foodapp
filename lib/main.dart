@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen(),
+      home: homePage(),
       routes: {
         '/login': (_) => login(),
         '/signup': (_) => signUp(),
         '/homepage': (_) => homePage(),
-        '/menu':(_) => Menuitems(),
-        '/menu2':(_) => Menuitems2(),
+        '/menu':(_) => CartApp(),
+        '/menu2':(_) => CartApp2(),
         '/menu3':(_) => Menuitem3(),
         '/menu4':(_) => Menuitem4(),
         '/menu5':(_) => Menuitem5(),
