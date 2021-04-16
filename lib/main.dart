@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_campus/FromStreets.dart';
 import 'package:one_campus/menus/menu2.dart';
 import 'package:one_campus/menus/menu3.dart';
 import 'package:one_campus/menus/menu4.dart';
@@ -6,7 +7,7 @@ import 'package:one_campus/menus/menu5.dart';
 import 'login.dart';
 import 'signup.dart';
 import 'homepage.dart';
-import 'splashscreen.dart';
+import 'Screens/splashscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:one_campus/menus/menu.dart';
 
@@ -28,9 +29,10 @@ class MyApp extends StatelessWidget {
         '/homepage': (_) => homePage(),
         '/menu':(_) => CartApp(),
         '/menu2':(_) => CartApp2(),
-        '/menu3':(_) => Menuitem3(),
-        '/menu4':(_) => Menuitem4(),
-        '/menu5':(_) => Menuitem5(),
+        '/menu3':(_) => CartApp3(),
+        '/menu4':(_) => CartApp4(),
+        '/menu5':(_) => CartApp5(),
+        '/streetfood':(_) => fromStreets(),
 
       },
     );

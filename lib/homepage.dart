@@ -136,7 +136,7 @@ class _homePageState extends State<homePage> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                print('button pressed');
+                Navigator.pushNamed(context, '/streetfood');
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(

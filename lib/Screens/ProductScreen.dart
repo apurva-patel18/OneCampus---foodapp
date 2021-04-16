@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../ProductModel.dart';
 
-
 class ProductScreen extends StatelessWidget {
   final ValueSetter<ProductModel> _valueSetter;
 
@@ -20,19 +19,24 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        itemBuilder: (context, index){
+        itemBuilder: (context, index) {
           return ListTile(
-            title: Text(products[index].name),
-            trailing: Text("\₹${products[index].price}", style: TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.w500),),
-            onTap: (){
+            title: Text(products[index].name, style: TextStyle(fontSize: 22),),
+            trailing: Text(
+              "\₹${products[index].price}",
+              style: TextStyle(
+                  color: Colors.redAccent,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
+            ),
+            onTap: () {
               _valueSetter(products[index]);
             },
           );
         },
-        separatorBuilder: (context, index){
+        separatorBuilder: (context, index) {
           return Divider();
         },
-        itemCount: products.length
-    );
+        itemCount: products.length);
   }
 }
