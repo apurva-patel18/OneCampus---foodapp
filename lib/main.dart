@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one_campus/FromStreets.dart';
+import 'package:one_campus/adminhome.dart';
+import 'package:one_campus/loginadmin.dart';
 import 'package:one_campus/menus/menu2.dart';
 import 'package:one_campus/menus/menu3.dart';
 import 'package:one_campus/menus/menu4.dart';
@@ -22,11 +24,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: homePage(),
+      home: SplashScreen(),
       routes: {
         '/login': (_) => login(),
+        '/loginadmin': (_) => loginadmin(),
         '/signup': (_) => signUp(),
         '/homepage': (_) => homePage(),
+        '/adminhome': (_) => adminHome(),
         '/menu':(_) => CartApp(),
         '/menu2':(_) => CartApp2(),
         '/menu3':(_) => CartApp3(),

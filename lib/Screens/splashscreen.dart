@@ -35,7 +35,9 @@ class SplashScreen extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Color(0xCCcdd6f2)),
                   padding: MaterialStateProperty.all(EdgeInsets.all(20)),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/loginadmin');
+                },
                 child: Text(
                   'Admin',
                   style: TextStyle(
