@@ -83,7 +83,7 @@ Widget buildNames() {
               padding: MaterialStateProperty.all(EdgeInsets.all(15)),
             ),
             child: Text(
-              'Hot and Spicy Puff',
+              'Hot and Spicy',
               style: TextStyle(
                   color: Color(0xff5961F9),
                   fontSize: 18,
