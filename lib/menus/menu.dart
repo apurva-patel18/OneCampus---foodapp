@@ -24,18 +24,22 @@ class _CartAppState extends State<CartApp> {
           title: Text("One Campus"),
           bottom: TabBar(
             tabs: <Widget>[
-              Tab(text: "Menu",),
-              Tab(text: "Checkout",),
+              Tab(
+                text: "Menu",
+              ),
+              Tab(
+                text: "Checkout",
+              ),
             ],
           ),
         ),
         body: TabBarView(
           children: <Widget>[
-            ProductScreen((selectedProduct){
+            ProductScreen((selectedProduct) {
               setState(() {
-                cart.add(selectedProduct);//update
+                cart.add(selectedProduct); //update
                 sum = 0;
-                cart.forEach((item){
+                cart.forEach((item) {
                   sum = sum + item.price;
                 });
               });

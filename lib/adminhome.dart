@@ -1,6 +1,5 @@
 import 'Screens/shopping_item_widget.dart';
 import 'package:flutter/material.dart';
-
 import 'data.dart';
 import 'model/shopping_item.dart';
 

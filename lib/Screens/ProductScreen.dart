@@ -33,6 +33,7 @@ class ProductScreen extends StatelessWidget {
               _valueSetter(products[index]);
             },
           );
+
         },
         separatorBuilder: (context, index) {
           return Divider();

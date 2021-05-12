@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:one_campus/FromStreets.dart';
+import 'package:one_campus/Screens/payment.dart';
 import 'package:one_campus/adminhome.dart';
 import 'package:one_campus/loginadmin.dart';
 import 'package:one_campus/menus/menu2.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/menu4':(_) => CartApp4(),
         '/menu5':(_) => CartApp5(),
         '/streetfood':(_) => fromStreets(),
+        '/payment':(_) => Payment(),
 
       },
     );

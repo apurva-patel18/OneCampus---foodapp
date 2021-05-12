@@ -107,7 +107,7 @@ Widget buildNames() {
               padding: MaterialStateProperty.all(EdgeInsets.all(15)),
             ),
             child: Text(
-              'abcd',
+              'Dilip Ghugra wala',
               style: TextStyle(
                   color: Color(0xff5961F9),
                   fontSize: 18,
@@ -131,7 +131,7 @@ Widget buildNames() {
               padding: MaterialStateProperty.all(EdgeInsets.all(15)),
             ),
             child: Text(
-              'xyz',
+              'Sev Usad',
               style: TextStyle(
                   color: Color(0xff5961F9),
                   fontSize: 18,
